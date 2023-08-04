@@ -13,8 +13,8 @@ const paisesDB = async () => {
       return {
         id: pais.cca3,
         name: pais.name.common,
-        flags: pais.flags,
-        continents: pais.continents,
+        flags: pais.flags.png,
+        continents: pais.region,
         population: pais.population,
         capital: pais.capital,
         area: pais.area,

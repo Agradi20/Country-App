@@ -1,34 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// eslint-disable-next-line no-unused-vars
+import React, {useState, useEffect} from 'react'
 import './App.css'
+import axios from "axios"
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { LandingPage } from './Components/Landing/LandingPage'
+import Home from "./Components/Home/Home";
+import NavBar from "./Components/NavBar/NavBar";
+import Cards from "./Components/Cards/Cards"
 
-function App() {
-  const [count, setCount] = useState(0)
+const {data} = await axios("http://localhost:3001/countries");
+console.log(data);
+
+ function App() {
+
+  const location = useLocation()
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      {location.pathname !== "/" && (<NavBar />)}
+      <Routes>
+        <Route path='/' element={<LandingPage />}></Route>
+        <Route path='/casa' element={<Home />}></Route>
+        <Route path='/home' element={<Cards data={data}/>}></Route>
+      </Routes>
+    </div>
   )
 }
 
