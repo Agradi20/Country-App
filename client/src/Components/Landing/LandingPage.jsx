@@ -5,10 +5,10 @@ import { Link } from "react-router-dom"
 export const LandingPage = () => {
     return (
         <div>
-            <h1>Country Browser App</h1>
-            <h3>Todos los Paises a la distancia de un Click</h3>
-            <h5>Visita todos los que quieras!</h5>
-            <Link to = "/home"><button>Ingrese Aca</button></Link>
+            <h1>Country Browser</h1>
+            <h3>All the Countries at only one click away!</h3>
+            <h5>Visit all the Countries you want!</h5>
+            <Link to="/home"><button>Start the journey</button></Link>
         </div>
     )
 }

@@ -4,7 +4,7 @@ const {Country} = require("../db")
 const getCountry = async (req, res) => {
     try {
       const countries = await Country.findAll();
-      res.json(countries); 
+      res.json(countries);
     } catch (error) {
       console.error('Error al obtener los países:', error);
       res.status(500).json({ error: 'Error al obtener los países' });

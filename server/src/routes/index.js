@@ -7,10 +7,10 @@ const getCountryByName = require("../controllers/getCountryByName")
 
 const router = Router();
 
+router.get("/countries", getCountry);
 router.get("/countries/name", getCountryByName);
 router.get("/countries/:idPais", getCountryById);
-router.get("/countries", getCountry);
-router.get("/activities", getAllActivity);
 router.post("/countries/activities", postActivity);
+router.get("/activities", getAllActivity);
 
 module.exports = router;

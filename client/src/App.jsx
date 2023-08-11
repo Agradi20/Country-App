@@ -1,28 +1,29 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './App.css'
-import axios from "axios"
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { LandingPage } from './Components/Landing/LandingPage'
 import Home from "./Components/Home/Home";
-import NavBar from "./Components/NavBar/NavBar";
-import Cards from "./Components/Cards/Cards"
+import Detail from "./Components/Detail/Detail"
+import Form from './Components/Form/Form';
+import SearchBar from './Components/SearchBar/SearchBar';
 
-const {data} = await axios("http://localhost:3001/countries");
-console.log(data);
 
- function App() {
+function App() {
 
-  const location = useLocation()
+
+  const location = useLocation();
 
 
   return (
     <div>
-      {location.pathname !== "/" && (<NavBar />)}
+      
+      {location.pathname !== '/' && !location.pathname.startsWith('/detail/') && <SearchBar/>}
       <Routes>
         <Route path='/' element={<LandingPage />}></Route>
-        <Route path='/casa' element={<Home />}></Route>
-        <Route path='/home' element={<Cards data={data}/>}></Route>
+        <Route path='/home' element={<Home />}></Route>
+        <Route path="/detail/:id" element={<Detail />}></Route>
+        <Route path="/create" element={<Form />}></Route>
       </Routes>
     </div>
   )
