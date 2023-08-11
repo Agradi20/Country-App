@@ -1,6 +1,6 @@
 /* eslint-disable no-case-declarations */
 // eslint-disable-next-line no-unused-vars
-import { GET_COUNTRIES, GET_COUNTRY, ORDER, FILTER_BY_ACTIVITIES, FILTER_BY_CONTINENT, FILTER_BY_NAME, GET_ACTIVITIES } from "../../src/Redux/actions";
+import { GET_COUNTRIES, GET_COUNTRY, ORDER, FILTER_BY_ACTIVITIES, FILTER_BY_CONTINENT, FILTER_BY_NAME, GET_ACTIVITIES, postActivity } from "../../src/Redux/actions";
 
 
 const initialState = {
@@ -53,8 +53,8 @@ const reducer = (state = initialState, action) => {
             };
 
         case FILTER_BY_ACTIVITIES:
-            const countriesActivities = state.countries.filter((country) => country.Activities && country.Activities.length > 0);
-
+            const copyCountries = [...state.baseCountries]
+            const countriesActivities = copyCountries.filter((country) => country.Activities && country.Activities.length > 0);
             return {
                 ...state,
                 countries: countriesActivities,

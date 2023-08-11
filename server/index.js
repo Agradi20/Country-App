@@ -3,7 +3,6 @@ const server = require("./src/server");
 const { conn } = require("./src/db.js");
 const { Country } = require("./src/db.js");
 const PORT = 3001;
-// const { Country } = require("../server/src/db")
 
 const paisesDB = async () => {
   try {

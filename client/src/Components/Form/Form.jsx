@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Validation from './Validation'
 import { postActivity } from '../../Redux/actions'
 import {Link} from "react-router-dom"
+import style from "./Form.module.css"
 
 const Form = () => {
 
@@ -14,6 +15,7 @@ const Form = () => {
 
   const [open, setOpen] = useState(false);
   const [error, setError] = useState({});
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [form, setForm] = useState({
     name:'',
     difficulty: '',
@@ -34,27 +36,6 @@ console.log("form", form)
     setError(Validation({...form, [property]: value}, setForm))
   }
 
-
-  // const handleCheckBoxChange = (event) => {
-  //   const { value } = event.target;
-
-  //   setForm((prevForm) => {
-  //     const countrySelected = prevForm.countries.includes(value);
-
-  //     if(countrySelected) {
-  //       return {
-  //         ...prevForm,
-  //         countries: prevForm.countries.filter((countries) => countries !== value),
-  //       };
-  //     } else {
-  //       return {
-  //         ...prevForm,
-  //         countries: [...prevForm.countries, value],
-  //       };
-  //     }
-  //   });
-  //   setError(Validation({...form, countries: value}))
-  // };
 
   const handlerCountry = (event) => {
     const selectedCountryId = event.target.value;
@@ -84,6 +65,18 @@ console.log("form", form)
   const handleSend = async (event) => {
     event.preventDefault();
     dispatch(await postActivity(form));
+    setShowSuccessAlert(true);
+  };
+
+  const resetForm = () => {
+    setForm({
+      name: '',
+      difficulty: '',
+      season: '',
+      countries: [],
+    });
+    setError({});
+    setOpen(false);
   };
 
 
@@ -99,8 +92,8 @@ console.log("form", form)
         <p>{form.countries.length > 0 ? form.countries.join(', ') : "Countries added"}</p>
         <button type="button" onClick={handleToggle}>Select countries</button>
         {open && (
-          <div>
-            <div>
+          
+            <div className={style.containerCountry}>
               <div>
                 {countryNames.map((element, index) => (
                   <div key={element.id}>
@@ -117,7 +110,6 @@ console.log("form", form)
               <br />
               {error.countries ? <span>{error.countries}</span> : ''}
             </div>
-          </div>
         )}
         </div>
 
@@ -171,9 +163,16 @@ console.log("form", form)
           <br />
           {error.season ? <span>{error.season}</span> : ''}
         </div>
+        {showSuccessAlert && (
+        <div>
+          <p>Activity posted successfully!</p>
+        </div>
+      )}
 
+      {showSuccessAlert && setTimeout(() => setShowSuccessAlert(false), 3500)}
         <div>
           <button type="submit" disabled={!form.name || !form.difficulty || !form.season || !form.countries || form.countries.length === 0}>Send</button>
+          <button type="button" onClick={resetForm}>Reset</button>
         </div>
       </form>
     </div>

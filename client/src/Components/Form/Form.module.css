@@ -1,0 +1,6 @@
+.containerCountry {
+    background-color: rgb(27, 25, 25);
+    max-height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+}

@@ -59,10 +59,12 @@ export const filterByPopuDesc = () => {
     };
 };
 
-export const filterByActivities = () => {
+export const filterByActivities = (payload) => {
     return {
         type: FILTER_BY_ACTIVITIES,
+        payload,
     };
+    
 };
 
 export const filterByContinent = (payload) => {

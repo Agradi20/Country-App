@@ -7,7 +7,7 @@ import Home from "./Components/Home/Home";
 import Detail from "./Components/Detail/Detail"
 import Form from './Components/Form/Form';
 import SearchBar from './Components/SearchBar/SearchBar';
-
+import style from "./App.css"
 
 function App() {
 
@@ -16,8 +16,7 @@ function App() {
 
 
   return (
-    <div>
-      
+    <div className={style.contenido}>
       {location.pathname !== '/' && !location.pathname.startsWith('/detail/') && <SearchBar/>}
       <Routes>
         <Route path='/' element={<LandingPage />}></Route>

@@ -3,17 +3,20 @@
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCountry } from '../../Redux/actions';
+import { getCountry, getActivities } from '../../Redux/actions';
 
 
 const Detail = () => {
   const detail = useSelector((state) => state.detail);
+  const activity = useSelector((state) => state.activity)
   const { id } = useParams();
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(getCountry(id));
+    dispatch(getActivities())
   }, [id, dispatch]);
+
 
   return (
     <div>
@@ -24,6 +27,14 @@ const Detail = () => {
       <h3>Subregion: {detail?.subregion && detail.subregion}</h3>
       <h3>Population: {detail.population && detail.population}</h3>
       <h3>Area: {detail?.area && detail.area} km²</h3>
+      <h2>Activities you can do</h2>
+      {activity.map((actividad) => (
+        <div key={actividad.id}>
+          <h4>Name of the activity: {actividad.name}</h4>
+          <h4>Season: {actividad.season}</h4>
+          <h4>Difficulty: {actividad.difficulty}</h4>
+        </div>
+      ))}
       <Link to={"/home"}><button>Back</button></Link>
     </div>
   );
