@@ -6,6 +6,7 @@ import { getCountries, filterByContinent, filterByNameAsc, filterByNameDesc, fit
 import { useDispatch, useSelector } from 'react-redux'
 import Cards from '../Cards/Cards'
 import { Link } from 'react-router-dom'
+import style from "./Home.module.css"
 
 const Home = () => {
 
@@ -51,28 +52,30 @@ const Home = () => {
 
 
   return (
-    <div>
-      <div>
-        <Link to="/create"><button>Create an activity</button></Link>
+    <div className={style.filtros}>
+      <h1 className={style.tituloHome}>COUNTRIES</h1>
+      <div className={style.boton1}>
+        <Link to="/create"><button className={style.botonActivity}>Create an activity</button></Link>
       </div>
+      <div className={style.Cadafiltro}>
       <h2>Order by Name </h2>
-      <select onChange={handleNameOrder}>
+      <select className={style.boton} onChange={handleNameOrder}>
         <option value="-">--Select--</option>
         <option value="A">Ascending</option>
         <option value="D">Descending</option>
       </select>
-      <div>
-        <div>
+      </div>
+        <div className={style.Cadafiltro}>
           <h2>Order by Population</h2>
-          <select onChange={handlePopulationOrder}>
+          <select onChange={handlePopulationOrder} className={style.boton}>
             <option value="-">--Select--</option>
             <option value="PA">Ascending</option>
             <option value="PD">Descending</option>
           </select>
         </div>
-        <div>
+        <div className={style.Cadafiltro}>
           <h2>Sort by Continent</h2>
-          <select onChange={handleContinentFilter}>
+          <select onChange={handleContinentFilter} className={style.boton}>
             <option value="Todo">--Select--</option>
             <option value="Africa">Africa</option>
             <option value="Asia">Asia</option>
@@ -81,15 +84,16 @@ const Home = () => {
             <option value="Oceania">Oceania</option>
           </select>
         </div>
-        <div>
+        <div className={style.Cadafiltro}>
           <h2>Sort by Activity</h2>
-          <select onChange={handleActivity}>
+          <select onChange={handleActivity} className={style.boton}>
             <option value="PS">--Select--</option>
             <option value="PA">With Activity</option>
           </select>
         </div>
-      </div>
+        <div className={style.cartas}>
         <Cards countries={countries}/>
+        </div>
     </div>
   )
 }

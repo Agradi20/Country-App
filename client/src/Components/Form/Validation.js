@@ -11,7 +11,7 @@ const Validation = (form) => {
         error.name='Please write an activity'
     }
     if(form.name.length<2 || form.name.length>25){
-        error.name= "⚠️Write an activity that hast at least 2 characters long and 25 characters at max⚠️."
+        error.name= "⚠️Write an activity that is at least 2 characters long and 25 characters max⚠️."
     }
     if(!form.dificulty){
         error.dificulty="⚠️Select a difficulty⚠️"

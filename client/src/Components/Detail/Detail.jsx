@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountry, getActivities } from '../../Redux/actions';
@@ -8,14 +8,18 @@ import { getCountry, getActivities } from '../../Redux/actions';
 
 const Detail = () => {
   const detail = useSelector((state) => state.detail);
-  const activity = useSelector((state) => state.activity)
+  const [filtro, setFiltro] = useState([]);
   const { id } = useParams();
   const dispatch = useDispatch()
 
+
   useEffect(() => {
+    if(detail.Activities) {
+      setFiltro(detail.Activities);
+    }
     dispatch(getCountry(id));
     dispatch(getActivities())
-  }, [id, dispatch]);
+  }, [id, dispatch, detail.Activities]);
 
 
   return (
@@ -28,7 +32,7 @@ const Detail = () => {
       <h3>Population: {detail.population && detail.population}</h3>
       <h3>Area: {detail?.area && detail.area} km²</h3>
       <h2>Activities you can do</h2>
-      {activity.map((actividad) => (
+      {filtro.map((actividad) => (
         <div key={actividad.id}>
           <h4>Name of the activity: {actividad.name}</h4>
           <h4>Season: {actividad.season}</h4>

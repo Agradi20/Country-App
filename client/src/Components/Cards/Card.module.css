@@ -1,0 +1,41 @@
+.carta {
+    align-items: center;
+    background-color: #000000a2;
+    border: 1px solid gray;
+    padding: 25px;
+    box-shadow: 7px 6px 8px -3px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
+    color: bisque;
+  }
+  
+  .carta:hover {
+    transform: scale(1.05);
+  }
+  
+  .banderas {
+    height: 100px;
+    width: 150px;
+  }
+  
+  @media (max-width: 768px) {
+    /* Estilos para dispositivos móviles */
+    .carta {
+      padding: 15px;
+    }
+  
+    .banderas {
+      height: 80px;
+      width: 120px;
+    }
+  }
+  
+  .nombre {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .continente {
+    text-decoration: none;
+    color: white;
+  }

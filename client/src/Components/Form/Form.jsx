@@ -62,9 +62,9 @@ console.log("form", form)
     setOpen(!open);
   };
 
-  const handleSend = async (event) => {
+  const handleSend = (event) => {
     event.preventDefault();
-    dispatch(await postActivity(form));
+    dispatch( postActivity(form));
     setShowSuccessAlert(true);
   };
 
@@ -84,24 +84,28 @@ console.log("form", form)
   return (
     <>
     <Link to="/home"><button>Back</button></Link>
-    <h1>Create your Activities</h1>
-    <div>
+    <h1 className={style.Titulo}>Create your Activities</h1>
+    <div className={style.Detail}>
       <form onSubmit={handleSend}>
-        <div>
-        <p>Select countries</p>
-        <p>{form.countries.length > 0 ? form.countries.join(', ') : "Countries added"}</p>
-        <button type="button" onClick={handleToggle}>Select countries</button>
+        <div className={style.preguntaUno}>
+        <p className={style.dato}>Select countries</p>
+        <p className={form.countries.length > 0 ? style.paisesAgregados : style.sinPaises}>
+        {form.countries.length > 0 ? form.countries.join(', ') : "Coutries added"}
+        </p>
+        <button className={style.boton} type="button" onClick={handleToggle}>Select countries</button>
         {open && (
           
-            <div className={style.containerCountry}>
-              <div>
+            <div className={style.paises}>
+              <div className={style.dropdownMenu}>
+              <div className={style.scrollableMenu}>
                 {countryNames.map((element, index) => (
-                  <div key={element.id}>
+                  <div className={style.formCheck} key={element.id}>
                     <input
                     type="checkbox"
                     onChange={handlerCountry}
                     name={element.name}
                     value={element.id}
+                    className={style.checkbox}
                     />
                     <label htmlFor={element.name}>{element.name}</label>
                   </div>
@@ -110,25 +114,27 @@ console.log("form", form)
               <br />
               {error.countries ? <span>{error.countries}</span> : ''}
             </div>
+            </div>
         )}
         </div>
 
-        <div>
-          <p htmlFor="name">Name of the activity</p>
+        <div className={style.pregunta2}>
+          <p htmlFor="name" className={style.dato}>Name of the activity</p>
           <input
           type='text'
           name='name'
           placeholder='Write an activity'
           value={form.name}
           onChange={handleSubmit}
+          className={style.place}
           required
           />
           <br />
-          {error.name ? <span>{error.name}</span> : ''}
+          {error.name ? <span className={style.error}>{error.name}</span> : ''}
         </div>
 
-        <div>
-          <p htmlFor="difficulty">Activity Difficulty</p>
+        <div className={style.pregunta3}>
+          <p htmlFor="difficulty" className={style.dato}>Activity Difficulty</p>
           <select
           name="difficulty"
           value={form.difficulty}
@@ -143,11 +149,11 @@ console.log("form", form)
             <option value={5}>Very hard</option>
             </select>
           <br />
-          {error.difficulty ? <span>{error.difficulty}</span> : ''}
+          {error.difficulty ? <span className={style.error}>{error.difficulty}</span> : ''}
         </div>
 
-        <div>
-          <p htmlFor="season">Season:</p>
+        <div className={style.pregunta4}>
+          <p htmlFor="season" className={style.dato}>Season:</p>
           <select
           name='season'
           value={form.season}
@@ -161,18 +167,18 @@ console.log("form", form)
             <option value="Otoño">Autumn</option>
           </select>
           <br />
-          {error.season ? <span>{error.season}</span> : ''}
+          {error.season ? <span className={style.error}>{error.season}</span> : ''}
         </div>
         {showSuccessAlert && (
         <div>
-          <p>Activity posted successfully!</p>
+          <p className={style.exito}>Activity posted successfully!</p>
         </div>
       )}
 
       {showSuccessAlert && setTimeout(() => setShowSuccessAlert(false), 3500)}
-        <div>
-          <button type="submit" disabled={!form.name || !form.difficulty || !form.season || !form.countries || form.countries.length === 0}>Send</button>
-          <button type="button" onClick={resetForm}>Reset</button>
+        <div className={style.botonEnviar}>
+          <button className={style.letra} type="submit" disabled={!form.name || !form.difficulty || !form.season || !form.countries || form.countries.length === 0}>Send</button>
+          <button className={style.reset} type="button" onClick={resetForm}>Reset</button>
         </div>
       </form>
     </div>

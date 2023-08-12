@@ -2,6 +2,7 @@
 import React, {useState} from "react";
 import Card from "./Card";
 import { useSelector } from "react-redux";
+import style from "./Cards.module.css"
 
 const Cards = () => {
     const countries = useSelector(state => state.countries);
@@ -26,7 +27,7 @@ const Cards = () => {
                 <h3>Country not found</h3>
             ) : (
                 <>
-                <div>
+                <div className={style.cartas}>
                 {currentCountries.map(country => (
               <Card
                 key={country.id}
@@ -37,7 +38,10 @@ const Cards = () => {
               />
             ))}
                 </div>
-                <div>
+                
+                </>
+            )}
+            <div className={style.paginado}>
                     {currentPage > 1 && (
                         <button onClick={previousPage}>Prev</button>
                     )}
@@ -45,9 +49,8 @@ const Cards = () => {
                         <button onClick={nextPage}>Next</button>
                     )}
                 </div>
-                </>
-            )}
         </div>
+        
     );
 };
 

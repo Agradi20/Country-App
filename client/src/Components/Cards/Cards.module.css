@@ -1,0 +1,15 @@
+.cartas {
+  margin-top: 50px;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .paginado {
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
