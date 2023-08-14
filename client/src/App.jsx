@@ -6,7 +6,7 @@ import { LandingPage } from './Components/Landing/LandingPage'
 import Home from "./Components/Home/Home";
 import Detail from "./Components/Detail/Detail"
 import Form from './Components/Form/Form';
-import SearchBar from './Components/SearchBar/SearchBar';
+import NavBar from './Components/NavBar/NavBar';
 import style from "./App.css"
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className={style.contenido}>
-      {location.pathname !== '/' && !location.pathname.startsWith('/detail/') && <SearchBar/>}
+      {location.pathname !== '/' && !location.pathname.startsWith('/detail/') && <NavBar/>}
       <Routes>
         <Route path='/' element={<LandingPage />}></Route>
         <Route path='/home' element={<Home />}></Route>
