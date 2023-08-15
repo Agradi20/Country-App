@@ -8,7 +8,7 @@
     transition: 0.25s;
     cursor: pointer;
    -webkit-text-stroke: 3px black;
-    margin-top: 125px; 
+    margin-top: 60px; 
 }
 
 .Titulo:hover{
@@ -16,7 +16,7 @@
 }
 
 .Detail{
-    height: 650px;
+    height: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -209,8 +209,61 @@
     cursor: pointer;
     font-weight: bold;
     font-size: 18px;
-    display: flex;
     align-items: center;
     margin-top: 10px;
 }
 
+.checkbox {
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .Titulo {
+      font-size: 45px;
+      margin-top: 90px;
+      margin-left: 80px;
+    }
+  
+    .Detail {
+      margin-inline: 10px;
+      border-radius: 20px;
+    }
+
+    .error {
+        font-size: 10px;
+      }
+  
+    .dato {
+      font-size: 14px;
+      padding-inline: 10px;
+    }
+  
+    .paisesAgregados,
+    .sinPaises {
+      margin-inline: 40px;
+      padding-inline: 5px;
+      font-size: 12px;
+    }
+
+    .boton {
+      margin-inline: 10px;
+      font-size: 14px;
+    }
+  
+    .dropdownMenu {
+      margin-inline: 10px;
+      width: auto;
+    }
+  
+    .botonEnviar {
+      margin-inline: 10px;
+    }
+  
+    .letra {
+      font-size: 14px;
+    }
+    .preguntaUno{
+        width: 420px;
+
+    }
+  }

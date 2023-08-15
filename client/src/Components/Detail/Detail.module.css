@@ -9,6 +9,7 @@
     cursor: pointer;
    -webkit-text-stroke: 3px black;
     margin-top: 100px;
+    margin-left: 150px;
    
 }
 
@@ -19,7 +20,7 @@
 .Detail{
     margin-top: 80px;
     margin-inline: 40px;
-    background: linear-gradient(to right, rgba(255, 250, 250, 0.603) 5%, rgb(255, 145, 0) 90%);
+    background: linear-gradient(to right, rgba(205, 105, 247, 0.603) 5%, rgb(255, 145, 0) 90%);
     display: flex;
     flex-direction: column;
     border-radius: 40px;
@@ -29,6 +30,7 @@
     -webkit-text-stroke: 0.5px black;
     text-align: center;
     box-shadow: 7px 6px 8px -3px rgba(0,0,0,0.26);
+    margin-left: 150px;
     
 }
 
@@ -60,6 +62,7 @@
     font-weight: 900;
     text-align: center;
     box-shadow: 7px 6px 8px -3px rgba(0,0,0,0.26);
+    margin-left: 100px;
 }
 
 .boton {
@@ -67,4 +70,37 @@
     align-items: center;
     text-align: center;
     margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .Titulo {
+      font-size: 45px;
+      margin-left: 70px;
+      margin-top: 90px;
+    }
+  
+    .Detail {
+      margin-top: 20px;
+      margin-inline: 10px;
+      font-size: 25px;
+    }
+  
+    .bandera {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+  
+    .actividad {
+      margin-inline: 10px;
+      grid-template-columns: 1fr;
+    }
+  
+    .CadaActividad {
+      width: 100%;
+      height: auto;
+      padding-bottom: 10px;
+      font-size: 14px;
+      border-radius: 10px;
+    }
 }

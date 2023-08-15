@@ -42,7 +42,8 @@
 }
 
 .contenido {
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 1200px;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
 }
+

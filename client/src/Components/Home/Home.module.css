@@ -32,7 +32,7 @@ body{
     width: 105%;
     padding-inline: 20px;
     margin-inline: 20px;
-    background: linear-gradient(to right, rgba(255, 250, 250, 0.603) 5%, rgb(255, 145, 0) 90%);
+    background: linear-gradient(to right, rgba(205, 105, 247, 0.603) 5%, rgb(255, 145, 0) 90%);
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
@@ -60,6 +60,9 @@ body{
     border: none;
     color: bisque;
     padding-left: 5px;
+    height: 30px;
+    width: 100px;
+    
 }
 
 
@@ -70,10 +73,20 @@ body{
 }
 
 .botonActivity {
+  background-color: black;
+  color: bisque;
   align-items: center;
-  height: 70px;
+  font-size: 15px;
+  height: 50px;
+  width: 120px;
   text-align: center;
-  margin-top: 2px;
+  margin-top: 12px;
+  border-radius: 100px;
+}
+
+.botonActivity:hover{
+  transform: scale(1.25);
+  
 }
 
 .cartas {
@@ -84,3 +97,29 @@ body{
   flex-direction: row;
   align-items: center;
 }
+
+.lista {
+color: black;
+font-weight: 100px;
+}
+
+@media (max-width: 768px) {
+    .tituloHome {
+      font-size: 50px;
+      margin-top: 80px;
+    }
+  
+    .filtros {
+      padding-inline: 5px;
+      margin-inline: 5px;
+    }
+  
+    .Cadafiltro {
+      margin-inline: 3px;
+      font-size: 10px;
+    }
+  
+    .boton {
+      font-size: 10px;
+    }
+  }

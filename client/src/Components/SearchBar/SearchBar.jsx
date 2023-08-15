@@ -21,6 +21,7 @@ const SearchBar = () => {
 
         if (search.length === 0) {
             dispatch(getCountries());
+            window.alert("Please write a name of a Country")
         }
     }
 

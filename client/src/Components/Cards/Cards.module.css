@@ -1,16 +1,97 @@
-.cartas {
-  margin-top: 50px;
-    gap: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
+.contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .paginado {
-    justify-content: center;
+.cartas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.cartas .card {
+  width: calc(20% - 20px); 
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card-content {
+  max-height: 100px; 
+  overflow: hidden;
+}
+
+
+.paginado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.botonPrev,
+.botonNext {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.botonPrev:hover,
+.botonNext:hover {
+  background-color: #0056b3;
+}
+
+
+.activePage {
+  background-color: #007bff;
+  color: white;
+}
+
+
+.ellipsis {
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+  @media (min-width: 1200px) {
+    .cartas {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+  
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     margin-top: 30px;
-    margin-bottom: 20px;
+  }
+
+  .activePage {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .ellipsis {
+    margin: 0 5px;
+  }
+
+  .botonPrev {
+    background-color: rgba(205, 105, 247, 0.603);
+    color: bisque;
+  }
+
+  .botonNext {
+    background-color: rgb(255, 145, 0);
+    color: black;
   }

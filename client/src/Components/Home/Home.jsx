@@ -58,25 +58,25 @@ const Home = () => {
         <Link to="/create"><button className={style.botonActivity}>Create an activity</button></Link>
       </div>
       <div className={style.Cadafiltro}>
-      <h2>Order by Name </h2>
+      <h2 className={style.lista}>Order by Name </h2>
       <select className={style.boton} onChange={handleNameOrder}>
-        <option value="-">--Select--</option>
+        <option value="-">Name</option>
         <option value="A">Ascending</option>
         <option value="D">Descending</option>
       </select>
       </div>
         <div className={style.Cadafiltro}>
-          <h2>Order by Population</h2>
+          <h2 className={style.lista}>Order by Population</h2>
           <select onChange={handlePopulationOrder} className={style.boton}>
-            <option value="-">--Select--</option>
+            <option value="-">Population</option>
             <option value="PA">Ascending</option>
             <option value="PD">Descending</option>
           </select>
         </div>
         <div className={style.Cadafiltro}>
-          <h2>Sort by Continent</h2>
+          <h2 className={style.lista}>Sort by Continent</h2>
           <select onChange={handleContinentFilter} className={style.boton}>
-            <option value="Todo">--Select--</option>
+            <option value="Todo">Continent</option>
             <option value="Africa">Africa</option>
             <option value="Asia">Asia</option>
             <option value="Europe">Europe</option>
@@ -85,9 +85,9 @@ const Home = () => {
           </select>
         </div>
         <div className={style.Cadafiltro}>
-          <h2>Sort by Activity</h2>
+          <h2 className={style.lista}>Sort by Activity</h2>
           <select onChange={handleActivity} className={style.boton}>
-            <option value="PS">--Select--</option>
+            <option value="PS">Activity</option>
             <option value="PA">With Activity</option>
           </select>
         </div>

@@ -6,12 +6,12 @@ import style from "./LandingPage.module.css"
 export const LandingPage = () => {
     return (
         <div className={style.contenido}>
-            <div className={style.titulo}>
+            <div>
             <h1>Country Browser</h1>
-            </div>
             <h3>All the Countries at only one click away!</h3>
             <h5>Visit all the Countries you want!</h5>
-            <Link to="/home"><button>Start the journey</button></Link>
+            <Link to="/home"><button className={style.boton}>Start the journey</button></Link>
+            </div>
         </div>
     )
 }

@@ -1,9 +1,25 @@
 .contenido {
     text-align: center;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 300px;
+    
 }
 
-.titulo {
-    margin-top: 0px;
-}
+  .boton {
+    height: 30px;
+    border-radius: 50px;
+    color: bisque;
+    background-color: #ee7300;
+    border: none;
+    box-shadow: 7px 6px 8px -3px rgba(0, 0, 0, 0.26);
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translate(0);
+    transition: 0.25s ease-out;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  
+  .boton:hover {
+    transform: scale(1.25);
+  }

@@ -7,16 +7,18 @@ import Home from "./Components/Home/Home";
 import Detail from "./Components/Detail/Detail"
 import Form from './Components/Form/Form';
 import NavBar from './Components/NavBar/NavBar';
-import style from "./App.css"
+import "./App.css"
 
 function App() {
+
+  const contenido = {}
 
 
   const location = useLocation();
 
 
   return (
-    <div className={style.contenido}>
+    <div style={contenido} className='contenido'>
       {location.pathname !== '/' && !location.pathname.startsWith('/detail/') && <NavBar/>}
       <Routes>
         <Route path='/' element={<LandingPage />}></Route>

@@ -83,7 +83,6 @@ console.log("form", form)
 
   return (
     <>
-    <Link to="/home"><button>Back</button></Link>
     <h1 className={style.Titulo}>Create your Activities</h1>
     <div className={style.Detail}>
       <form onSubmit={handleSend}>
