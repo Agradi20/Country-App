@@ -1,21 +1,14 @@
 .carta {
-    /* align-items: center;
-    background-color: #000000a2;
-    border: 1px solid gray;
-    padding: 25px;
-    box-shadow: 7px 6px 8px -3px rgba(0, 0, 0, 0.26);
-    border-radius: 10px;
-    color: bisque; */
-    width: calc(20% - 20px); /* 20% para 5 por línea, ajusta el margen */
+  width: calc(20% - 20px);
   margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #000000a2;
+  background-color: #313030a2;
   border: 1px solid gray;
   padding: 25px;
   box-sizing: border-box;
-  max-height: 300px; /* Ajusta el tamaño máximo del contenido */
+  max-height: 300px;
   overflow: hidden;
   }
   
