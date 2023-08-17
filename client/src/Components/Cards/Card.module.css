@@ -1,15 +1,16 @@
-.carta {
-  width: calc(20% - 20px);
+.carta2 { 
+  width: calc(20% - 20px); 
+  width: 240px;
   margin: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   background-color: #313030a2;
   border: 1px solid gray;
   padding: 25px;
   box-sizing: border-box;
   max-height: 300px;
-  overflow: hidden;
+  /* overflow: hidden; */
   }
   
   .carta:hover {

@@ -46,7 +46,6 @@ const Detail = () => {
           <h4>Name of the activity: {actividad.name}</h4>
           <h4>Season: {actividad.season}</h4>
           <h4>Difficulty: {actividad.difficulty}</h4>
-          
         </div>
       ))}
     </div>

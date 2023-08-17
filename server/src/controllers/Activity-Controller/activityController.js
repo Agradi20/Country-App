@@ -1,6 +1,17 @@
-const { Activity, Country } = require("../db");
+const { Activity, Country } = require("../../db");
 
-const postActivity = async (req, res) => {
+
+ const getActivity = async (req, res) => {
+    try {
+      const activities = await Activity.findAll({include: Country});
+      res.status(200).send(activities);
+    } catch (error) {
+      res.status(400).json({ error: 'Error al obtener las actividades' });
+    }
+};
+
+
+ const postActivity = async (req, res) => {
     const { name, difficulty, season, countries } = req.body
     try {
         if (!name || !difficulty || !season || !countries) throw Error("Faltan datos")
@@ -20,4 +31,7 @@ const postActivity = async (req, res) => {
     }
 }
 
-module.exports = postActivity;
+module.exports = {
+    getActivity,
+    postActivity
+}

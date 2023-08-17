@@ -16,18 +16,21 @@ const Cards = () => {
     const currentCountries = countries.slice(firstCountry, lastCountry);
 
     const nextPage = () => {
+      // si en la pagina en la que me encuentro es menor a el total de paginas significa que estoy en la primer pagina por lo tanto la pagina siguiente es la pagina en la que estoy mas 1
         if (currentPage < totalPages) {
           setCurrentPage(currentPage + 1);
         }
       };
     
       const previousPage = () => {
+        // Si el numero de la pagina es mayor a 1 que la pagina anterior sea la que estoy parado menos 1
         if (currentPage > 1) {
           setCurrentPage(currentPage - 1);
         }
       };
     
       const goToPage = (pageNumber) => {
+        // Si el numero de la pagina es mayor o igual a 1 y menor o igual a todas las paginas que me muestre la pagina determinada 
         if (pageNumber >= 1 && pageNumber <= totalPages) {
           setCurrentPage(pageNumber);
         }
@@ -37,7 +40,7 @@ const Cards = () => {
         const pageButtons = [];
     
         if (totalPages <= 7) {
-          // Show all page buttons if total pages are 7 or fewer
+          // Mostrar todas las paginas sin el total de paginas es 7 o menor
           for (let i = 1; i <= totalPages; i++) {
             pageButtons.push(
               <button
@@ -50,7 +53,7 @@ const Cards = () => {
             );
           }
         } else {
-          // Show limited page buttons with ellipsis
+          // Mostar limitadas paginas con ellipsis
           if (currentPage <= 4) {
             for (let i = 1; i <= 5; i++) {
               pageButtons.push(

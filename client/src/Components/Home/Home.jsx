@@ -13,6 +13,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const countries = useSelector((state) => state.countries);
+  
   useEffect(() => {
     dispatch(getCountries());
   }, [dispatch]);

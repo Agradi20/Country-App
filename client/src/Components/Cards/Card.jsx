@@ -14,7 +14,7 @@ export default function Card({ id, continents, name, flags }) {
         return <h2 className={style.nombre}>{name}</h2>
     }
     return (
-        <div className={style.carta}>
+        <div className={style.carta2}>
             <Link key={id} to={`/detail/${id}`}>{nombreCortado()}
                 <img className={style.banderas} src={flags} alt={name} /></Link>
                 <h3 className={style.continente}>{continents}</h3>
